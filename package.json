@@ -1,17 +1,20 @@
 {
   "$schema": "https://www.raycast.com/schemas/extension.json",
-  "name": "search-with-algolia",
-  "title": "Search with Algolia",
+  "name": "searchmetabookmarks",
+  "title": "Search Metabookkmars",
   "description": "This extension allows to search through an Algolia index directly from Raycast.",
   "icon": "command-icon.png",
   "author": "valentindotxyz",
+  "contributors": [
+    "jscontreras"
+  ],
   "license": "MIT",
   "commands": [
     {
       "name": "index",
       "title": "Search",
-      "subtitle": "Algolia",
-      "description": "Search through an Algolia index directly from Raycast.",
+      "subtitle": "Metabookmarks",
+      "description": "Search through an Algolia Metabookmarks index directly from Raycast.",
       "mode": "view",
       "preferences": [
         {

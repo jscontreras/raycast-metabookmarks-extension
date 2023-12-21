@@ -35,14 +35,14 @@ export default function main() {
   useEffect(() => {
     (async () => setSearchResults(await search()))();
   }, []);
-
+  console.log('searchResults', searchResults)
   return (
     <List
       throttle={true}
       isLoading={isLoading || searchResults === undefined}
       onSearchTextChange={async (query) => setSearchResults(await search(query))}
     >
-      {searchResults?.map((result) => (
+      {searchResults?.filter(item => (item[preferences.mainAttribute])).map((result) => (
         <List.Item
           key={result.objectID}
           title={result[preferences.mainAttribute]}
@@ -50,7 +50,7 @@ export default function main() {
           actions={
             preferences.urlAttribute ? (
               <ActionPanel title={result.name}>
-                <OpenInBrowserAction url={result.url} title="Open in Browser" />
+                <OpenInBrowserAction url={`https://metabookmarks.firebaseapp.com/mb/${result.objectID}`} title="Open in Browser" />
               </ActionPanel>
             ) : undefined
           }
