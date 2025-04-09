@@ -40,7 +40,7 @@ export default function main() {
     <List
       throttle={true}
       isLoading={isLoading || searchResults === undefined}
-      onSearchTextChange={async (query) => setSearchResults(await search(query))}
+      onSearchTextChange={async (query: string | undefined) => setSearchResults(await search(query))}
     >
       {searchResults?.filter(item => (item[preferences.mainAttribute])).map((result) => (
         <List.Item
